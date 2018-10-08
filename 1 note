@@ -1,0 +1,15 @@
+go to jenkins plugins nodejs
+
+
+create a new job
+
+create a project name: nodejs example >freestyle>ok
+git>https://github.com/ammarqq/docker-demo.git
+
+build>shell command>npm install
+scropup to build_enviromnet>provide node  & npm bin/folder path to use it install node
+now disable it andonly use npm install
+
+go to manage jenkins>global tool configuration>nodejs>nodejs>install automatically the latest version
+
+>back to the nodejs_example_app>configure>build environment>nodejs

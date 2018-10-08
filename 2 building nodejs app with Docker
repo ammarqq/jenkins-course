@@ -1,0 +1,33 @@
+go to plugins >search>search on CloudBees Docker Build and Publish plugin.
+
+install now and restart after install
+
+next step make sure docker running on our system.
+when the jenkins used docker container we ned a socket to use docker on the instance installed on it .
+
+there is  docker image on this repositroy https://github.com/ammarqq/jenkins-docker.git
+git clone https://github.com/ammarqq/jenkins-docker.git
+
+docker build -t jenkins-docker .
+it will install jenkinsdocker with docker client.
+
+remove old jenkins 
+
+docker rm jenkins
+
+still mounted to /var/jenkins-home
+docker run -p 8080:8080 -p 5000:5000 -v /var/jenkins-home:/var/jenkins-home -v /var/run/docker.sock:/var/run/docker.sock --name jenkins -d jenkins-docker
+
+
+docker exec -it jenkins bash
+back to jenkins project nodejs_example_app>configure>build>docker build and publish>repositoryname:ammarqqqq/docker-nodejs
+>we need registry credentials.
+
+to check it on any machine
+
+docker pull ammarqqqq/docker-nodejs
+
+docker run -p 3000:3000 -d --name noddejs-app ammarqqqq/nodejs
+curl localhost:3000
+
+
