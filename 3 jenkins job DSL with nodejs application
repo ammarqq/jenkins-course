@@ -1,0 +1,42 @@
+goto manage jeninks>plugins>jobDSL install it.
+
+create a new item>seed_project>freestyle project >git >build>process job DSLs>job-dsl/nodejs.groovy
+
+
+https://github.com/ammarqq/jenkins-course.git
+
+not approved to use to resolve it goto jenkins>configure jenkins >in-process script approval>approve.
+
+you will find nodejs example  as a project 
+
+goto jenkins console
+
+find / -name 'npm'
+
+export PATH=$PATH:/var/lib/jenkins/tools/jenkins.plugins.nodejs.tools.NodeJSInstallation/nodejs/bin
+
+
+cd /var/lib/jenkins/workspace/NodeJS...
+
+npm start
+
+> myapp@0.0.1 start /var/lib/jenkins/workspace/NodeJS example
+> node index.js
+
+Example app listening at http://:::3000
+
+___________________
+
+Jenkins job DSL with docker build and publish
+
+https://jenkinsci.github.io/job-dsl-plugin/
+
+search dockerBuildAndPublish
+
+referback to seed project>configure and add the 2ndfile in  the path of the file nodejsdocker.groovy
+
+
+we need to add dockerhub credential
+goto credential>on global>add credential>username:ammarqqqq>password:mypassword>ID:dockerhub
+
+now build the seed project again.
